@@ -2401,3 +2401,59 @@ input:focus, textarea:focus, button:focus {
 .feature-link:hover {
   color: inherit;
 }
+
+/* Background overlay */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Popup box */
+.modal-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.modal-content button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.modal-content button:hover {
+  background: #0056c7;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
