@@ -1,146 +1,579 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data & Workflow Automation | Antryl Consulting</title>
+  <!-- SEO: Primary -->
+  <meta name="description" content="We design reliable ETL pipelines, automated workflows, and scalable data platforms that remove manual effort and scale with your business. Free 30-min audit."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://www.antryl.com/data-and-workflow-automation.html"/>
 
-  <title>Data & Workflow Automation Services | Antryl Consulting</title>
+  <!-- SEO: Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.antryl.com/data-and-workflow-automation.html"/>
+  <meta property="og:title" content="Data & Workflow Automation | Antryl Consulting"/>
+  <meta property="og:description" content="We design reliable ETL pipelines, automated workflows, and scalable data platforms that remove manual effort and scale with your business. Free 30-min audit."/>
+  <meta property="og:image" content="https://www.antryl.com/assets/img/logo/logo.png"/>
+  <meta property="og:site_name" content="Antryl Consulting"/>
 
-  <meta name="description"
-    content="Scalable data pipelines and workflow automation to eliminate manual work, improve reliability, and power better decisions." />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Data & Workflow Automation | Antryl Consulting"/>
+  <meta name="twitter:description" content="We design reliable ETL pipelines, automated workflows, and scalable data platforms that remove manual effort and scale with your business. Free 30-min audit."/>
+  <meta name="twitter:image" content="https://www.antryl.com/assets/img/logo/logo.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    :root {
+      --ink: #0d0e1a;
+      --paper: #f5f6ff;
+      --accent: #5a69ff;
+      --accent-light: #a5b4ff;
+      --accent-light: #8B93E8;
+      --muted: #5e6080;
+      --border: #dde0f5;
+      --card: #ffffff;
+    }
 
-  <!-- ========================= CSS ========================= -->
-  <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
-  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
-  <link rel="stylesheet" href="assets/css/animate.css" />
-  <link rel="stylesheet" href="assets/css/lindy-uikit.css" />
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 4rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--paper);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .logo img { height: 36px; width: auto; display: block; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    nav ul a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      padding: 6rem 4rem 5rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-cta {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .hero-cta:hover { background: var(--accent); }
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.5rem;
+      padding-left: 2rem;
+      border-left: 1px solid var(--border);
+    }
+    .stat-item { }
+    .stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3rem;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .stat-number span { color: var(--accent); }
+    .stat-label { font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
+
+    /* SECTION WRAPPER */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 4rem;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+      margin-bottom: 0.75rem;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 560px;
+      margin-bottom: 3.5rem;
+    }
+
+    /* SERVICES GRID */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .service-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+      transform: translateY(-2px);
+    }
+    .service-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--paper);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.2rem;
+    }
+    .service-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+    }
+    .service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+    }
+    .tag {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.6rem;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* PROCESS */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .step {
+      padding: 2rem;
+      border-right: 1px solid var(--border);
+      background: var(--card);
+    }
+    .step:last-child { border-right: none; }
+    .step-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--border);
+      margin-bottom: 1rem;
+    }
+    .step h4 {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .step p { font-size: 0.85rem; color: var(--muted); }
+
+    /* TOOLS */
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .tool-pill {
+      padding: 0.5rem 1.2rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      color: var(--ink);
+      background: var(--card);
+      font-weight: 500;
+    }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 0;
+    }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-q::after { content: '+'; color: var(--accent); font-size: 1.3rem; font-weight: 300; }
+    .faq-a { font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: var(--ink);
+      color: #fff;
+      padding: 5rem 4rem;
+      text-align: center;
+    }
+    .cta-banner h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: 1rem;
+    }
+    .cta-banner p { color: #aaa; font-size: 1rem; max-width: 500px; margin: 0 auto 2rem; }
+    .cta-btn {
+      display: inline-block;
+      padding: 0.9rem 2.2rem;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.85; }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ANIMATIONS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.6s ease forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      nav ul { gap: 1rem; }
+      .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 2rem; }
+      .hero-stats { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 2rem; flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
+      .section { padding: 3rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .step { border-bottom: 1px solid var(--border); }
+      .cta-banner { padding: 3rem 1.5rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-  <!-- ========================= HEADER ========================= -->
-  <header class="header header-6">
-    <div class="navbar-area">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="index.html">
-            <img src="assets/img/logo/logo.png" alt="Antryl Consulting Logo" />
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent">
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-            <span class="toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="page-scroll" href="index.html#home">Home</a></li>
-              <li class="nav-item"><a class="page-scroll" href="index.html#feature">Services</a></li>
-              <li class="nav-item"><a class="page-scroll" href="index.html#about">About</a></li>
-              <li class="nav-item"><a class="page-scroll" href="index.html#pricing">Pricing</a></li>
-              <li class="nav-item"><a class="page-scroll" href="index.html#contact">Contact</a></li>
-            </ul>
-          </div>
-        </nav>
+<nav>
+  <a href="https://www.antryl.com/" class="logo"><img src="https://www.antryl.com/assets/img/logo/logo.png" alt="Antryl Consulting" /></a>
+  <ul>
+    <li><a href="https://www.antryl.com/">Home</a></li>
+    <li><a href="https://www.antryl.com/#feature">Services</a></li>
+    <li><a href="https://www.antryl.com/#about">About</a></li>
+    <li><a href="https://www.antryl.com/#pricing">Pricing</a></li>
+    <li><a href="https://www.antryl.com/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="border-bottom: 1px solid var(--border);">
+  <div class="hero">
+    <div class="fade-in">
+      <p class="hero-tag">Service — Data Engineering</p>
+      <h1>Data & Workflow <em>Automation</em></h1>
+      <p>We build reliable pipelines and automated workflows that eliminate manual effort, improve data quality, and scale as your business grows — so your team focuses on decisions, not data wrangling.</p>
+      <a href="https://www.antryl.com/#contact" class="hero-cta">Book a Free 30-min Audit →</a>
+    </div>
+    <div class="hero-stats fade-in delay-2">
+      <div class="stat-item">
+        <div class="stat-number">80<span>%</span></div>
+        <div class="stat-label">Average reduction in manual reporting time</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">3<span>×</span></div>
+        <div class="stat-label">Faster data availability for decision-making</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24<span>/7</span></div>
+        <div class="stat-label">Automated pipelines running while you sleep</div>
       </div>
     </div>
-  </header>
+  </div>
+</div>
 
-  <!-- ========================= HERO ========================= -->
-  <section class="hero-section hero-style-5 img-bg cta-spacing"
-    style="background-image: url('assets/img/hero/hero-5/hero-bg.svg')">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h2 class="mb-25 wow fadeInUp">Data & Workflow Automation</h2>
-          <p class="mb-30 wow fadeInUp" data-wow-delay=".2s">
-            We design reliable data pipelines and automated workflows that remove
-            manual effort, improve data quality, and scale with your business.
-          </p>
-        </div>
-        <div class="col-lg-6 text-lg-end">
-          <img src="assets/img/hero/hero-5/hero-img.png"
-            alt="Data & Workflow Automation"
-            class="wow fadeInUp hero-image"
-            data-wow-delay=".3s">
-        </div>
+<!-- WHAT WE DO -->
+  </div>
+<div class="section">
+  <p class="section-label">What We Do</p>
+  <h2>From raw data to reliable infrastructure</h2>
+  <p class="section-sub">We handle the full data stack — ingestion, transformation, storage, and delivery — so your team always has clean, timely data.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <h3>Automated ETL Pipelines</h3>
+      <p>We build and automate extract, transform, load workflows that move data from any source to your warehouse reliably and on schedule.</p>
+      <div class="service-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Airflow</span>
+        <span class="tag">dbt</span>
+        <span class="tag">SQL</span>
       </div>
     </div>
-  </section>
-
-  <!-- ========================= WHAT WE DO ========================= -->
-  <section class="feature-section feature-style-5 cta-spacing">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h3 class="mb-40 wow fadeInUp">What We Do</h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4">
-          <div class="single-feature wow fadeInUp">
-            <i class="lni lni-database mb-15"></i>
-            <h5>Automated Data Pipelines</h5>
-            <p>
-              Build and automate ETL workflows using Python, SQL, APIs, and cloud tools.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
-            <i class="lni lni-cloud mb-15"></i>
-            <h5>Scalable Data Platforms</h5>
-            <p>
-              Design modern data warehouses that grow with your data and business needs.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
-            <i class="lni lni-code-alt mb-15"></i>
-            <h5>Data Quality & Monitoring</h5>
-            <p>
-              Validation, monitoring, documentation, and governance baked into every pipeline.
-            </p>
-          </div>
-        </div>
+    <div class="service-card">
+      <div class="service-icon">🏗️</div>
+      <h3>Scalable Data Platforms</h3>
+      <p>Modern data warehouse design that grows with your data volume and team — structured for both ad-hoc analysis and production reporting.</p>
+      <div class="service-tags">
+        <span class="tag">BigQuery</span>
+        <span class="tag">Snowflake</span>
+        <span class="tag">Redshift</span>
+        <span class="tag">dbt</span>
       </div>
     </div>
-  </section>
+    <div class="service-card">
+      <div class="service-icon">🔍</div>
+      <h3>Data Quality & Monitoring</h3>
+      <p>Automated validation, anomaly detection, and alerting baked into every pipeline — so issues surface before they reach your dashboards.</p>
+      <div class="service-tags">
+        <span class="tag">Great Expectations</span>
+        <span class="tag">dbt Tests</span>
+        <span class="tag">Alerts</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔗</div>
+      <h3>API & Third-Party Integrations</h3>
+      <p>Connect your CRM, marketing tools, payment systems, and internal databases into a single unified data layer — no more data silos.</p>
+      <div class="service-tags">
+        <span class="tag">REST APIs</span>
+        <span class="tag">Webhooks</span>
+        <span class="tag">Fivetran</span>
+        <span class="tag">Airbyte</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📋</div>
+      <h3>Business Process Automation</h3>
+      <p>Eliminate repetitive manual tasks — report generation, data entry, file transfers, email workflows — replaced by reliable automated systems.</p>
+      <div class="service-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Make</span>
+        <span class="tag">Zapier</span>
+        <span class="tag">Google Sheets API</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Data Governance & Docs</h3>
+      <p>Data dictionaries, lineage documentation, and access controls that make your data trustworthy and auditable as your team scales.</p>
+      <div class="service-tags">
+        <span class="tag">dbt Docs</span>
+        <span class="tag">Data Catalog</span>
+        <span class="tag">Lineage</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <!-- ========================= CTA ========================= -->
-  <section class="cta-section text-center cta-spacing">
-    <div class="container">
-      <h3 class="mb-20 wow fadeInUp">
-        Get In Touch
-      </h3>
-      <p class="mb-30 wow fadeInUp" data-wow-delay=".2s">
-        Ready to turn your data into clarity? Reach out to discuss your needs and challenges. We begin with a free 30-minute audit to review your current setup and share actionable improvement ideas.
-      </p>
-      <a href="https://antryl.github.io/#contact" class="button radius-30 wow fadeInUp" data-wow-delay=".4s">
-        Book Free Audit
+<!-- HOW WE WORK -->
+<div style="background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section">
+    <p class="section-label">How We Work</p>
+    <h2>Our process, start to finish</h2>
+    <p class="section-sub" style="margin-bottom: 2.5rem;">We move fast without cutting corners — typically delivering first working pipelines within 2 weeks.</p>
+
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Discovery Audit</h4>
+        <p>We map your current data sources, tools, pain points, and goals in a free 30-minute session.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Architecture Design</h4>
+        <p>We propose a lightweight, scalable architecture matched to your stack, team, and budget.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Build & Automate</h4>
+        <p>We build, test, and deploy pipelines — with documentation and monitoring from day one.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Handoff & Support</h4>
+        <p>Full handoff with training, runbooks, and optional ongoing support as your needs evolve.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOOLS -->
+<div class="section">
+  <p class="section-label">Tools & Technologies</p>
+  <h2>We work with what you already use</h2>
+  <p class="section-sub">No vendor lock-in. We design around your existing stack and recommend only what makes sense for your scale.</p>
+  <div class="tools-grid">
+    <span class="tool-pill">Python</span>
+    <span class="tool-pill">SQL</span>
+    <span class="tool-pill">dbt</span>
+    <span class="tool-pill">Apache Airflow</span>
+    <span class="tool-pill">BigQuery</span>
+    <span class="tool-pill">Snowflake</span>
+    <span class="tool-pill">Redshift</span>
+    <span class="tool-pill">PostgreSQL</span>
+    <span class="tool-pill">Fivetran</span>
+    <span class="tool-pill">Airbyte</span>
+    <span class="tool-pill">Google Sheets API</span>
+    <span class="tool-pill">REST APIs</span>
+    <span class="tool-pill">Looker Studio</span>
+    <span class="tool-pill">Make / Zapier</span>
+    <span class="tool-pill">AWS / GCP</span>
+    <span class="tool-pill">GitHub Actions</span>
+  </div>
+</div>
+
+<!-- FAQ -->
+
+<div style="background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section">
+    <p class="section-label">FAQ</p>
+    <h2>Common questions</h2>
+    <p class="section-sub" style="margin-bottom: 2.5rem;">Things clients usually ask before we get started.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How long does a typical project take?</div>
+        <div class="faq-a">Most automation and pipeline projects take 2–6 weeks depending on complexity. We'll scope this clearly in the discovery audit before any commitment.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need a dedicated data team to work with you?</div>
+        <div class="faq-a">No. We work with founders, ops teams, and non-technical stakeholders. We handle the technical side and keep you updated in plain language throughout.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if my data is messy or unstructured?</div>
+        <div class="faq-a">That's exactly where we start. Data cleanup, normalization, and quality assessment are built into our process — not billed separately.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will I be locked into your infrastructure choices?</div>
+        <div class="faq-a">Never. We build with open tools and document everything so your internal team (or any future partner) can take over without dependency on us.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you offer ongoing maintenance?</div>
+        <div class="faq-a">Yes — we offer optional monthly retainers for monitoring, pipeline updates, and new data source integrations as your business grows.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<!-- RELATED SERVICES -->
+<div style="border-top:1px solid var(--border);">
+  <div style="max-width:1200px;margin:0 auto;padding:4rem;">
+    <p style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.75rem;">Explore More</p>
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.6rem;margin-bottom:0.5rem;">Other services we offer</h3>
+    <p style="font-size:0.9rem;color:var(--muted);margin-bottom:2rem;">We work across the full data and product stack — see how our other services might complement what you need.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+      
+      <a href="https://www.antryl.com/business-analysis-and-strategy.html" style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.75rem;text-decoration:none;color:inherit;display:block;transition:box-shadow 0.2s,transform 0.2s,border-color 0.2s;"
+        onmouseover="this.style.boxShadow='0 8px 32px rgba(90,105,255,0.1)';this.style.transform='translateY(-2px)';this.style.borderColor='var(--accent)'"
+        onmouseout="this.style.boxShadow='';this.style.transform='';this.style.borderColor='var(--border)'">
+        <h4 style="font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:0.4rem;">Business Analysis & Strategy</h4>
+        <p style="font-size:0.85rem;color:var(--muted);line-height:1.6;margin-bottom:0.75rem;">KPI dashboards, forecasting & strategic insights</p>
+        <span style="font-size:0.82rem;color:var(--accent);font-weight:500;">Explore →</span>
+      </a>
+      <a href="https://www.antryl.com/digital-marketing-and-growth.html" style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.75rem;text-decoration:none;color:inherit;display:block;transition:box-shadow 0.2s,transform 0.2s,border-color 0.2s;"
+        onmouseover="this.style.boxShadow='0 8px 32px rgba(90,105,255,0.1)';this.style.transform='translateY(-2px)';this.style.borderColor='var(--accent)'"
+        onmouseout="this.style.boxShadow='';this.style.transform='';this.style.borderColor='var(--border)'">
+        <h4 style="font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:0.4rem;">Digital Marketing & Growth</h4>
+        <p style="font-size:0.85rem;color:var(--muted);line-height:1.6;margin-bottom:0.75rem;">Campaign analytics, funnel analysis & CAC optimisation</p>
+        <span style="font-size:0.82rem;color:var(--accent);font-weight:500;">Explore →</span>
+      </a>
+      <a href="https://www.antryl.com/software-as-a-service.html" style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:1.75rem;text-decoration:none;color:inherit;display:block;transition:box-shadow 0.2s,transform 0.2s,border-color 0.2s;"
+        onmouseover="this.style.boxShadow='0 8px 32px rgba(90,105,255,0.1)';this.style.transform='translateY(-2px)';this.style.borderColor='var(--accent)'"
+        onmouseout="this.style.boxShadow='';this.style.transform='';this.style.borderColor='var(--border)'">
+        <h4 style="font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:0.4rem;">SaaS & AI for Pharma</h4>
+        <p style="font-size:0.85rem;color:var(--muted);line-height:1.6;margin-bottom:0.75rem;">MVPs, internal tools & AI-powered pharma products</p>
+        <span style="font-size:0.82rem;color:var(--accent);font-weight:500;">Explore →</span>
       </a>
     </div>
-  </section>
-
-  <!-- ========================= FOOTER ========================= -->
-  <footer class="footer footer-style-4">
-    <div class="container text-center">
-      <p>© 2026 Antryl Consulting. All rights reserved.</p>
+    <div style="margin-top:2rem;text-align:center;">
+      <a href="https://www.antryl.com/" style="font-size:0.88rem;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px;">← Back to homepage</a>
     </div>
-  </footer>
+  </div>
+</div>
+<div class="cta-banner">
+  <h2>Ready to stop doing things manually?</h2>
+  <p>Start with a free 30-minute audit. We'll review your current setup and share exactly where automation can save you time.</p>
+  <a href="https://www.antryl.com/#contact" class="cta-btn">Book Free Audit →</a>
+</div>
 
-  <!-- ========================= JS ========================= -->
-  <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
-  <script src="assets/js/wow.min.js"></script>
-  <script>
-    new WOW().init();
-  </script>
+<footer>
+  © 2026 Antryl Consulting. All rights reserved. &nbsp;·&nbsp; <a href="https://www.antryl.com/" style="color: inherit;">Home</a>
+</footer>
 
 </body>
 </html>

@@ -11,14 +11,10 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
         message: document.getElementById("message").value
     };
 
-    const params = new URLSearchParams(formData);
-
-    // Primary path: POST as urlencoded data (common apps script doPost(e.parameter) patterns)
-    fetch(endpoint, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8" },
-        body: params.toString()
+    const queryString = new URLSearchParams(formData).toString();
+    fetch(`${endpoint}?${queryString}`, {
+        method: "GET",
+        mode: "no-cors"
     })
     .then(() => {
         document.getElementById("thankYouModal").style.display = "flex";
