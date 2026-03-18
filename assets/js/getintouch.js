@@ -20,7 +20,18 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
         document.getElementById("thankYouModal").style.display = "flex";
         document.getElementById("contactForm").reset();
     })
-    .catch(err => console.log(err));
+    .catch(() => {
+        // fallback path: GET as query parameters (common apps script doGet patterns)
+        fetch(`${endpoint}?${params.toString()}`, {
+            method: "GET",
+            mode: "no-cors"
+        })
+        .then(() => {
+            document.getElementById("thankYouModal").style.display = "flex";
+            document.getElementById("contactForm").reset();
+        })
+        .catch(err => console.log("GetInTouch submission failed:", err));
+    });
 });
 
 document.getElementById("closeModal").addEventListener("click", function() {
