@@ -11,17 +11,31 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
         message: document.getElementById("message").value
     };
 
+    const params = new URLSearchParams(formData);
+
+    // Primary path: POST as urlencoded data (common apps script doPost(e.parameter) patterns)
     fetch(endpoint, {
         method: "POST",
         mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8" },
+        body: params.toString()
     })
     .then(() => {
         document.getElementById("thankYouModal").style.display = "flex";
         document.getElementById("contactForm").reset();
     })
-    .catch(err => console.log(err));
+    .catch(() => {
+        // fallback path: GET as query parameters (common apps script doGet patterns)
+        fetch(`${endpoint}?${params.toString()}`, {
+            method: "GET",
+            mode: "no-cors"
+        })
+        .then(() => {
+            document.getElementById("thankYouModal").style.display = "flex";
+            document.getElementById("contactForm").reset();
+        })
+        .catch(err => console.log("GetInTouch submission failed:", err));
+    });
 });
 
 document.getElementById("closeModal").addEventListener("click", function() {
