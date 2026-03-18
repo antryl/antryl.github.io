@@ -11,11 +11,10 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
         message: document.getElementById("message").value
     };
 
-    fetch(endpoint, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+    const queryString = new URLSearchParams(formData).toString();
+    fetch(`${endpoint}?${queryString}`, {
+        method: "GET",
+        mode: "no-cors"
     })
     .then(() => {
         document.getElementById("thankYouModal").style.display = "flex";
