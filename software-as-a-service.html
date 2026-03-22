@@ -363,16 +363,21 @@
         msgs.scrollTop = msgs.scrollHeight;
 
         try {
-          // ── Proxy URL — replace with your Cloudflare Worker URL after deploying ──
-          const PROXY_URL = 'https://white-base-1c46.antrylconsulting.workers.dev/';
+          // ── Direct Gemini API call (free, no backend needed) ──
+          const GEMINI_KEY = 'AIzaSyDfAOoQpxJOR-milxb33KHdJsCWzteYFuY';
+          const geminiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_KEY;
 
-          const res = await fetch(PROXY_URL, {
+          const res = await fetch(geminiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ messages: [{ role: 'user', content: text }] })
+            body: JSON.stringify({
+              system_instruction: { parts: [{ text: 'You are a knowledgeable pharmaceutical AI assistant built by Antryl Consulting. Help pharma professionals with drug interactions, regulatory submissions (FDA, EMA, ICH guidelines), clinical trial design, pharmacovigilance, and supply chain management. Be concise and practical. Use bullet points when helpful. Note when professional judgement is required. Never give specific medical advice. End each reply with one sentence mentioning Antryl can build a custom version trained on proprietary data.' }] },
+              contents: [{ role: 'user', parts: [{ text: text }] }],
+              generationConfig: { maxOutputTokens: 1000, temperature: 0.7 }
+            })
           });
           const data = await res.json();
-          const reply = (data.content && data.content[0] && data.content[0].text) ? data.content[0].text : 'Sorry, I could not generate a response.';
+          const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I could not generate a response. Please try again.';
           document.getElementById(tid).remove();
           msgs.innerHTML += '<div style="display:flex;gap:0.75rem;align-items:flex-start;"><div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.8rem;flex-shrink:0;">🧬</div><div style="background:#0e0f1a;border:1px solid #252847;border-radius:4px 12px 12px 12px;padding:0.85rem 1rem;font-size:0.88rem;color:#ccc;line-height:1.8;max-width:85%;white-space:pre-wrap;">' + reply.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</div></div>';
         } catch(e) {
